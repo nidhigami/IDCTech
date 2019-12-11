@@ -1,0 +1,80 @@
+<div class="bootstrap-iso">
+  <div class="bs-example">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">Add Training Schedule</a>
+      <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+      </div>
+    </nav>
+  </div>
+  <div class="container">
+
+    <div id="trainingFormDiv" class="row">
+      <div class="col-sm-10 ">
+        <div>
+          <form [formGroup]="trainingForm" (ngSubmit)="onFormSubmit()" class="needs-validation">
+            <div class="form-group">
+              <label class="control-label col-sm-2 requiredField" for="name">Name: <span class="asteriskField">
+                  *
+                </span>
+              </label>
+              <div class="col-sm-10">
+                <div class="input-group">
+
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Enter Name" required>
+
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2 requiredField" for="startDate">
+                Start Date:
+                <span class="asteriskField">
+                  *
+                </span>
+              </label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+                    </i>
+                  </div>
+                  <input class="form-control" id="startDate" name="startDate" placeholder="DD/MM/YYYY" type="text" required/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="control-label col-sm-2 requiredField" for="endDate">
+                End Date:
+                <span class="asteriskField">
+                  *
+                </span>
+              </label>
+              <div class="col-sm-10">
+                <div class="input-group">
+                  <div class="input-group-addon">
+                    <i class="fa fa-calendar">
+                    </i>
+                  </div>
+                  <input class="form-control" id="endDate" name="endDate" placeholder="DD/MM/YYYY" type="text"  required/>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-offset-2">
+                <input type="submit" value="Create" class="btn btn-primary">
+                <p *ngIf="dataSaved" style="display:inline; color:rgb(0, 128, 0);font-size:20px;font-weight:bold" Class="success" align="left">
+                    {{massage}}
+                  </p>
+              </div>
+            </div>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
